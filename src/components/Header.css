@@ -1,0 +1,8 @@
+.cs-header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--glass-bg); backdrop-filter: blur(12px); border-bottom: 1px solid var(--color-border); height: var(--header-height); }
+.cs-header-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-4); height: 100%; display: flex; align-items: center; gap: var(--space-4); }
+.cs-logo { display: flex; align-items: center; gap: var(--space-2); font-weight: 700; margin-right: auto; }
+.cs-logo svg { color: var(--color-accent-primary); }
+.cs-nav { display: flex; gap: 2px; }
+.cs-nav-link { display: flex; align-items: center; gap: var(--space-1); padding: var(--space-1) var(--space-3); font-size: var(--font-size-xs); font-weight: 500; color: var(--color-text-secondary); border-radius: var(--radius-md); transition: all var(--transition-fast); }
+.cs-nav-link:hover { color: var(--color-text-primary); background: var(--color-bg-hover); }
+.cs-nav-link.active { color: var(--color-accent-primary); background: var(--color-accent-soft); }
