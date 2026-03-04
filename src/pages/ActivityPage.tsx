@@ -1,18 +1,21 @@
-import { Activity } from "lucide-react";
+import { Clock } from "lucide-react";
+import { Card, Badge } from "@geenius-ui/react-css";
+
 const events = [
-  { time: "11:10", type: "sync" as const, msg: "12 config files synced from GitHub" },
-  { time: "11:05", type: "create" as const, msg: "New connection: S3 → Log Archive" },
-  { time: "10:50", type: "error" as const, msg: "Slack webhook failed: 401 Unauthorized" },
-  { time: "10:30", type: "sync" as const, msg: "3 templates synced from Notion" },
-  { time: "10:15", type: "sync" as const, msg: "4,200 log entries archived to S3" },
+  { time: "11:05", type: "sync", msg: "GitHub → OpenClaw Config: 12 items synced" },
+  { time: "10:55", type: "sync", msg: "S3 → Log Archive: 4,200 items archived" },
+  { time: "10:45", type: "error", msg: "Slack → Alert Channel: Connection timeout" },
+  { time: "10:30", type: "sync", msg: "Notion → Agent Templates: 3 items synced" },
+  { time: "10:15", type: "sync", msg: "GitHub → OpenClaw Config: 8 items synced" },
 ];
+
 export default function ActivityPage() {
-  return (<div style={{padding:"var(--space-6)",maxWidth:900,margin:"0 auto",paddingTop:"calc(var(--header-height) + var(--space-6))"}}>
-    <h1 style={{display:"flex",alignItems:"center",gap:"var(--space-2)",fontSize:"var(--font-size-xl)",fontWeight:700,marginBottom:"var(--space-6)"}}><Activity size={20}/> Activity</h1>
-    <div style={{display:"flex",flexDirection:"column",gap:"var(--space-2)"}}>{events.map((e,i)=>(<div key={i} className="card" style={{padding:"var(--space-3) var(--space-4)",display:"flex",alignItems:"center",gap:"var(--space-3)"}}>
-      <span style={{fontFamily:"var(--font-mono)",fontSize:"12px",color:"var(--color-text-tertiary)",width:50}}>{e.time}</span>
-      <span className={`badge badge-${e.type==="error"?"red":"teal"}`}>{e.type}</span>
-      <span style={{flex:1,fontSize:"var(--font-size-sm)"}}>{e.msg}</span>
-    </div>))}</div>
+  return (<div style={{ padding: "var(--space-6)", maxWidth: 900, margin: "0 auto", paddingTop: "calc(var(--header-height) + var(--space-6))" }}>
+    <h1 style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", fontSize: "var(--font-size-xl)", fontWeight: 700, marginBottom: "var(--space-6)" }}><Clock size={20} /> Activity</h1>
+    <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>{events.map((e, i) => (<Card key={i} padding="sm" className="activity-event" >
+      <span style={{ fontFamily: "var(--font-mono)", fontSize: "12px", color: "var(--color-text-tertiary)", width: 50 }}>{e.time}</span>
+      <Badge variant={e.type === "error" ? "error" : "info"}>{e.type}</Badge>
+      <span style={{ flex: 1, fontSize: "var(--font-size-sm)" }}>{e.msg}</span>
+    </Card>))}</div>
   </div>);
 }
