@@ -1,5 +1,6 @@
-id: 23403142-ae63-4658-95d9-11eade1f3927
 name: claw-sync
+project_scope: main
+project_type: standalone
 description: Claw Sync
 tier: prototype
 lane: oss
@@ -9,5 +10,6 @@ stack: [typescript, react, convex, vite]
 repo: "https://github.com/mxn2020/claw-sync"
 deploy_url: null
 last_active: 2026-02-24
-tags: []
-notes: 
+tags: [openclaw, sync, replication, data, distributed, tools, automation]
+notes: null
+id: 23403142-ae63-4658-95d9-11eade1f3927
