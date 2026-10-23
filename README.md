@@ -17,7 +17,7 @@ git clone https://github.com/mxn2020/claw-sync.git
 cd claw-sync && npm install && npm run dev
 ```
 ## 📄 License
-MIT © [AVS Media](https://github.com/mxn2020)
+Apache-2.0 © [AVS Media](https://github.com/mxn2020)
 
 ---
 
